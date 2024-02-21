@@ -20,58 +20,58 @@ class _DrawerTwoState extends State<DrawerTwo> {
       drawer: Drawer(
         width: width / 1.15,
         shape: const RoundedRectangleBorder(),
-        child: Container(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
+        child: Column(
+          children: [
 
-              //DRAWER HEADER
-              Expanded(
-                child: DrawerHeader(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Color(0xff9a8dda),
-                        Color(0xffd5a0f9)
-                      ]
-                    )
-                  ),
-                    child: Column(
-                      children: [
-
-                        //TWO MINI AVATAR
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            addAvatar(),
-                            addAvatar(),
-                          ],
-                        ),
-
-                        //ONE MAIN AVATAR
-                        addAvatar2(),
-
-                        //NAME AND EMAIL
-                        const Text('Juliet Gushiken', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-                        const Text('Juliet2310@icloud.com', style: TextStyle(color: Color(0xff7166a2) ,fontSize: 12, fontWeight: FontWeight.w500),),
-                      ],
-                    ),
+            //DRAWER HEADER
+            SizedBox(
+              height: 270,
+              child: DrawerHeader(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Color(0xff9a8dda),
+                      Color(0xffd5a0f9)
+                    ]
+                  )
                 ),
-              ),
+                  child: Column(
+                    children: [
 
-              Expanded(
-                flex: 2,
+                      //TWO MINI AVATAR
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          addAvatar(),
+                          addAvatar(),
+                        ],
+                      ),
+
+                      //ONE MAIN AVATAR
+                      addAvatar2(),
+
+                      //NAME AND EMAIL
+                      const Text('Juliet Gushiken', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
+                      const Text('Juliet2310@icloud.com', style: TextStyle(color: Color(0xff7166a2) ,fontSize: 12, fontWeight: FontWeight.w500),),
+                    ],
+                  ),
+              ),
+            ),
+
+            Expanded(
+              flex: 3,
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
                       ...List.generate(drawerList2.length, (index) => addItemBox(icon: drawerList2[index]['icon'], name: drawerList2[index]['name'])),
                     ],
-                  )
-              )
+                  ),
+                )
+            )
 
-            ],
-          ),
+          ],
         ),
       ),
 
@@ -125,7 +125,7 @@ class _DrawerTwoState extends State<DrawerTwo> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0),
       child: SizedBox(
-        width: width / 2,
+        width: 150,
         child: Row(
           children: [
             Padding(
